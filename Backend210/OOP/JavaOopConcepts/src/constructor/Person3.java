@@ -23,6 +23,8 @@ public class Person3 {
         Person3 person2=Person3.builder().name("Ali").surname("Can").build();
         Person3 person3=Person3.builder().age(23).build();
 
+        System.out.println(person.name);
+
 
     }
 
