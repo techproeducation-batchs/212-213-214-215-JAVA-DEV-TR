@@ -23,6 +23,11 @@ public class ThreadCreationWays {
         Thread thread3=new Thread(new Runnable() {
             @Override
             public void run() {
+                try {
+                    Thread.sleep(5000);//thread3 bekleyecek 5 sn
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 System.out.println("Çalışan thread: "+Thread.currentThread().getName());
                 System.out.println("Anonim sınıf ile thread oluşturuldu...");
             }
@@ -31,7 +36,7 @@ public class ThreadCreationWays {
         thread3.start();
 
 
-        //2.YOL:lambda
+        //2.YOL:lambda exp.
         Thread thread4=new Thread(()->{
 
             System.out.println("Çalışan thread: "+Thread.currentThread().getName());
@@ -40,6 +45,15 @@ public class ThreadCreationWays {
         });
         thread4.setName("harika");
         thread4.start();
+
+
+        try {
+            Thread.sleep(3000);//hangi thread(main) çalışırken kullanılırsa bu threadi bekletir.
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("Burada main metod bitiyor...");
 
 
 
