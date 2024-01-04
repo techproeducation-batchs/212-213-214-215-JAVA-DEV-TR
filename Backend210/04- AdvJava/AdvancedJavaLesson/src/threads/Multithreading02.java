@@ -2,7 +2,7 @@ package threads;
 
 public class Multithreading02 {
 
-    public static int sayac=0;
+    public volatile static int sayac=0;
 
     public static void main(String[] args) {
 
