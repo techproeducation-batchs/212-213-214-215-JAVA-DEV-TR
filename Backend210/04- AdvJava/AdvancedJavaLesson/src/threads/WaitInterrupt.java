@@ -55,7 +55,7 @@ public class WaitInterrupt {
                 obj.withdraw(1000);
             }
         });
-        thread1.setName("AliCan");
+        thread1.setName("tüketici");
         thread1.start();
 
         Thread thread2=new Thread(new Runnable() {
@@ -70,7 +70,7 @@ public class WaitInterrupt {
                 thread1.interrupt();//thread1 in beklemesini kesintiye uğratır
             }
         });
-        thread2.setName("Veli");
+        thread2.setName("üretici");
         thread2.start();
 
 
